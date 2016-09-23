@@ -15,7 +15,7 @@ class Airline extends Migration {
         Schema::create('airline', function ($table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('name_neb', 255);
+            $table->string('name_heb', 255);
             $table->string('code', 10);
             $table->integer('supplier_id')->default('0');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
