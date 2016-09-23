@@ -19,9 +19,11 @@ class Airport extends Migration {
             $table->integer('city_id');
             $table->integer('country_id');
             $table->string('code', 10);
+
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at');
             $table->timestamp('deleted_at')->nullable()->default(DB::raw('NULL'));
+
             $table->index(['code', 'city_id', 'country_id']);
         });
     }

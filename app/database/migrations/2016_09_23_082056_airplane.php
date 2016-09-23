@@ -16,6 +16,7 @@ class Airplane extends Migration {
             $table->increments('id');
             $table->string('name', 255);
             $table->string('name_heb', 255);
+
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at');
             $table->timestamp('deleted_at')->nullable()->default(DB::raw('NULL'));

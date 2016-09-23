@@ -16,6 +16,7 @@ class Cache extends Migration {
             $table->string('key', 255);
             $table->text('value');
             $table->integer('expiration');
+
             $table->index('key');
         });
     }

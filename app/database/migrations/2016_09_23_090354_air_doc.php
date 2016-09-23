@@ -16,9 +16,11 @@ class AirDoc extends Migration {
             $table->increments('id');
             $table->text('data');
             $table->string('entity', 10);
+
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at');
             $table->timestamp('deleted_at')->nullable()->default(DB::raw('NULL'));
+
             $table->index('entity');
         });
     }
