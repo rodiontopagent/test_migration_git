@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Airplane extends Migration {
+class Bank extends Migration {
 
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class Airplane extends Migration {
      */
     public function up()
     {
-        Schema::create('airplane', function ($table) {
+        Schema::create('bank', function ($table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('name_heb', 255);
+            $table->string('code', 255);
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at');
@@ -30,7 +30,7 @@ class Airplane extends Migration {
      */
     public function down()
     {
-        Schema::drop('airplane');
+        Schema::drop('bank');
     }
 
 }

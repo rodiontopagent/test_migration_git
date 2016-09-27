@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Airplane extends Migration {
+class Country extends Migration {
 
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class Airplane extends Migration {
      */
     public function up()
     {
-        Schema::create('airplane', function ($table) {
+        Schema::create('country', function($table) {
             $table->increments('id');
             $table->string('name', 255);
             $table->string('name_heb', 255);
@@ -30,7 +30,7 @@ class Airplane extends Migration {
      */
     public function down()
     {
-        Schema::drop('airplane');
+        Schema::drop('country');
     }
 
 }

@@ -18,9 +18,11 @@ class Airline extends Migration {
             $table->string('name_heb', 255);
             $table->string('code', 10);
             $table->integer('supplier_id')->default('0');
+
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at');
             $table->timestamp('deleted_at')->nullable()->default(DB::raw('NULL'));
+
             $table->index(['code', 'supplier_id']);
         });
     }

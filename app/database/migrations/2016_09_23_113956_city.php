@@ -3,17 +3,17 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Airplane extends Migration {
+class City extends Migration {
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('airplane', function ($table) {
-            $table->increments('id');
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('city', function($table) {
+		    $table->increments('id');
             $table->string('name', 255);
             $table->string('name_heb', 255);
 
@@ -21,16 +21,16 @@ class Airplane extends Migration {
             $table->timestamp('updated_at');
             $table->timestamp('deleted_at')->nullable()->default(DB::raw('NULL'));
         });
-    }
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::drop('airplane');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::drop('city');
+	}
 
 }
