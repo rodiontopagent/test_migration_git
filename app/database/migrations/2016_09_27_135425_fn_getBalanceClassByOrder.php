@@ -13,7 +13,7 @@ class FnGetBalanceClassByOrder extends Migration {
 	public function up()
 	{
 		$sql = <<<SQL
-    CREATE FUNCTION fn_getBalanceClassByOrder (i_OrderId MEDIUMINT) RETURNS DECIMAL
+    CREATE FUNCTION fn_getBalanceClassByOrder (i_OrderId MEDIUMINT) RETURNS VARCHAR(255)
 
 BEGIN
 	DECLARE balance DECIMAL(10,2);
