@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'tour_time_test',
+			'database'  => 'procedure_test',
 			'username'  => 'root',
 			'password'  => '159753AsD',
 			'charset'   => 'utf8',
