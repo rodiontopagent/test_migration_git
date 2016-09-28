@@ -1,0 +1,77 @@
+<?php
+
+class PermissionsSeeder extends Seeder {
+    public function run() {
+        $table = [
+            "4" => ["update_currency_rate", "עדכון שערי מטבע"],
+            "5" => ["create_payment", "קליטת תשלום"],
+            "6" => ["manage_project", "ניהול פרוייקט"],
+            "7" => ["delete_order", "מחיקת הזמנה"],
+            "8" => ["view_statistics", "צפייה בסטטיסטיקות"],
+            "9" => ["do_ticketing", "כירטוס"],
+            "13" => ["edit_customers", "עריכת לקוחות"],
+            "14" => ["delete_customers", "מחיקת לקוחות"],
+            "15" => ["do_storno", "ביצוע סטורנו"],
+            "16" => ["update_active_flight", "עדכון טיסה - סטטוס פעיל"],
+            "17" => ["update_flight_price", "עדכון מחירי טיסה"],
+            "18" => ["reserve_seats", "שמירת מקומות בטיסה"],
+            "19" => ["update_flight_status", "עדכון סטטוס טיסה בהזמנה"],
+            "20" => ["manage_flights", "ניהול טיסות"],
+            "21" => ["do_move_payment", "ביצוע העברת תשלום"],
+            "22" => ["manage_services", "ניהול שירותים"],
+            "23" => ["update_service_details", "עדכון פרטי שירות בהזמנה"],
+            "24" => ["manage_suppliers", "ניהול ספקים"],
+            "25" => ["view_cost_elements", "צפייה במרכיבי עלות"],
+            "28" => ["manage_payment_control", "בקרת תשלומים"],
+            "31" => ["do_manual_cc_payment", "ביצוע תשלום אשראי ללא חיוב"],
+            "32" => ["view_seats_details", "צפייה בנתוני מקומות"],
+            "33" => ["view_availible_seats", "צפייה במקומות זמינים"],
+            "34" => ["restricted_to_num_seats", "צפייה בכמות מוגדרת של מקומות זמינים"],
+            "35" => ["view_all_docets", "צפייה בכל הדוקטים"],
+            "36" => ["group_eticketing", "ביצוע כירטוס אלקטרוני מרוכז"],
+            "37" => ["add_retroactive_services", "הוספת שירות רטרואקטיבית"],
+            "38" => ["group_vouchers", "ייצוא וואוצרים מרוכז"],
+            "39" => ["view_active_users", "צפייה במשתמשים מחוברים"],
+            "40" => ["view_main_statistics", "צפייה בסטטיסטיקות ראשי"],
+            "41" => ["debt_group_eticketing", "ביצוע כרטוס אלקטורני מרוכז בחוב"],
+            "42" => ["re_group_eticketing", "ביצוע כרטוס אלקטרוני ל\"נמסרו\""],
+            "43" => ["use_service_negative_amounts", "שימוש בערכים שליליים בהזמנה"],
+            "44" => ["change_order_customer", "שינוי לקוח בהזמנה קיימת"],
+            "45" => ["do_negative_payment", "ביצוע תשלום נגטיבי"],
+            "46" => ["manage_configuration", "גישה להגדרות מערכת"],
+            "47" => ["manage_users", "הגדרות: ניהול משתמשים"],
+            "48" => ["manage_payment_method_comission", "הגדרות: ניהול מדרג אשראי"],
+            "49" => ["move_payment_close_order", "העברת תשלום מהזמנה סגורה"],
+            "50" => ["export_users_report", "דוחות: פעילות פקידים"],
+            "51" => ["change_single_flight_price", "שינוי מחיר טיסות יחידים"],
+            "52" => ["delete_order_service", "מחיקת שירות מהזמנה"],
+            "54" => ["export_agents_report", "דוחות: פעילות רשמים"],
+            "55" => ["manage_permissions", "ניהול הרשאות"],
+            "56" => ["view_resereved_seats", "צפייה במקומות שמורים"],
+            "57" => ["change_customer_with_active_orders", "שינוי שם לקוח עם הזמנה פעילה"],
+            "58" => ["reorder_flights", "מיון טיסות"],
+            "60" => ["delete_order_flight", "מחיקת טיסה משירות"],
+            "61" => ["group_order_status", "שינוי סטטוס הזמנה מרוכז"],
+            "62" => ["view_email_adresses", "צפייה ברשימת אימיילים"],
+            "63" => ["view_supplier_vouchers", "צפייה בשוברי ספק"],
+            "64" => ["create_supplier_vouchers", "יצירת שוברי ספקים"],
+            "65" => ["can_use_payment_deposit_method", "ביצוע תשלום הפקדה"],
+            "66" => ["view_order_profit", "צפייה ברווחיות הזמנה"],
+            "67" => ["generate_system_report", "ביצוע דוח רווחיות"],
+            "68" => ["manage_comissions", "ניהול עמלות"],
+            "69" => ["manual_comission", "עמלה ידנית"],
+            "70" => ["change_order_customer_active_flights", "שינוי לקוח עם טיסות בתהליך"],
+            "71" => ["", ""],
+            "72" => ["project_send_sms", "שליחת sms בפרוייקט"],
+            "73" => ["project_replace_flights", "החלפת טיסות מרוכזת בפרוייקט"],
+            "74" => ["group_remove_service", "הסרת שירות מרוכז בפרוייקט"],
+        ];
+
+        foreach ($table as $permission) {
+            DB::table('permissions')->insert([
+                'name' => $permission[0],
+                'description' => $permission[1]
+            ]);
+        }
+    }
+}

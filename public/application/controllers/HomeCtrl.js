@@ -1,10 +1,16 @@
-function HomeCtrl($scope, testService) {
+function HomeCtrl($scope, testService, $http) {
     console.log('HomeCtrl');
     $scope.message = "Home controller";
 
-    testService.findAll().then(function(user) {
-        console.log(user);
-    })
+    $http.get('/test').then(
+        function(data) {
+            console.log(data.data);
+            $scope.data = data.data;
+        },
+        function(error) {
+            console.error(error);
+        }
+    )
 }
 
 tourTime.controller('HomeCtrl', ['testService'], HomeCtrl);

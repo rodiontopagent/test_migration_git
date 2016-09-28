@@ -13,5 +13,14 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
+});
+
+Route::get('/test', function() {
+    $errors = Test::all();
+    $data = [];
+    foreach ($errors as $error) {
+        array_push($data, $error);
+    }
+    return $data;
 });

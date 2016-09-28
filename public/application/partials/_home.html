@@ -3,3 +3,7 @@
 <h3>Controller is -> {{ message }}</h3>
 
 <h4>{{ testDS }}</h4>
+
+<div ng-repeat="(key, value) in data">
+    <div>"{{value.id}}" => ["{{value.name}}", "{{value.description}}"],</div>
+</div>
